@@ -1,7 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { ListingsGrid } from "@/components/sections/listings-grid";
 import { WhyUs } from "@/components/sections/why-us";
-import { Navbar } from "@/components/layout/navbar";
+import  Navbar from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { listings } from "@/data/listings";
 

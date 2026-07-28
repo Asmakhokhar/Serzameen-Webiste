@@ -1,30 +1,72 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+"use client";
 
-export function Navbar() {
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Logo from "./logo";
+import { Button } from "../ui/button";
+
+const links = [
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about" },
+  { title: "Properties", href: "/properties" },
+  { title: "Gallery", href: "/gallery" },
+  { title: "Contact", href: "/contact" },
+];
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
-          Serzameen Estates
-        </Link>
-        <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-          <Link href="#listings" className="transition hover:text-slate-900">
-            Listings
-          </Link>
-          <Link href="#why-us" className="transition hover:text-slate-900">
-            Why Us
-          </Link>
-          <Link href="#contact" className="transition hover:text-slate-900">
-            Contact
-          </Link>
+    <header
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-500
+      ${
+        scrolled
+          ? "bg-white shadow-lg py-4"
+          : "bg-transparent py-7"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-8">
+
+        <Logo colored={scrolled} />
+
+        <nav className="hidden lg:flex items-center gap-10">
+          {links.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className={`text-sm uppercase tracking-[0.15em] transition
+              ${
+                scrolled
+                  ? "text-[#0D3B4A] hover:text-[#0E8AA7]"
+                  : "text-white hover:text-[#D7C08A]"
+              }`}
+            >
+              {item.title}
+            </Link>
+          ))}
         </nav>
-        <Link
-          href="#contact"
-          className="inline-flex h-7 items-center rounded-[min(var(--radius-md),12px)] bg-primary px-2.5 text-[0.8rem] font-medium text-primary-foreground transition hover:bg-primary/80"
+
+        <Button
+          className={`rounded-full px-7 h-11
+          ${
+            scrolled
+              ? "bg-[#0E8AA7] hover:bg-[#09738a]"
+              : "bg-white text-[#0D3B4A] hover:bg-[#ececec]"
+          }`}
         >
-          Book Visit
-        </Link>
+          Book a Visit
+        </Button>
+
       </div>
     </header>
   );
