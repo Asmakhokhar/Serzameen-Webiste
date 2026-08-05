@@ -4,13 +4,14 @@ import { WhyUs } from "@/components/sections/why-us";
 import  Navbar from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { listings } from "@/data/listings";
-
+import About from "@/components/sections/about";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <About />
         <ListingsGrid listings={listings} />
         <WhyUs />
         <section id="contact" className="mx-auto max-w-7xl px-6 py-16 lg:px-8">

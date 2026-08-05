@@ -31,7 +31,7 @@ export default function Navbar() {
       className={`fixed left-0 top-0 z-50 w-full transition-all duration-500
       ${
         scrolled
-          ? "bg-white shadow-lg py-4"
+          ? "bg-white shadow-lg py-6"
           : "bg-transparent py-7"
       }`}
     >
@@ -57,7 +57,7 @@ export default function Navbar() {
         </nav>
 
         <Button
-          className={`rounded-full px-7 h-11
+          className={`rounded-md px-7 h-10
           ${
             scrolled
               ? "bg-[#0E8AA7] hover:bg-[#09738a]"

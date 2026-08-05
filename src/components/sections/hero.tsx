@@ -10,7 +10,7 @@ export function Hero() {
         alt=""
         fill
         priority
-        className="absolute inset-0 z-0 object-cover w-auto h-full"
+        className="absolute inset-0 z-0 object-cover w-auto h-auto"
       />
 
       <div className="absolute inset-0 z-10 bg-black/35" />
