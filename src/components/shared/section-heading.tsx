@@ -1,31 +1,25 @@
-interface SectionHeadingProps {
-  smallTitle: string;
+interface AboutHeadingProps {
   title: string;
-  italicWord?: string;
+  italicTitle: string;
 }
 
-export default function SectionHeading({
-  smallTitle,
+export default function AboutHeading({
   title,
-  italicWord,
-}: SectionHeadingProps) {
+  italicTitle,
+}: AboutHeadingProps) {
   return (
-    <div className="space-y-5">
-      <span className="uppercase tracking-[5px] text-[#D7C08A] text-sm font-medium">
-        {smallTitle}
-      </span>
-
-      <h2 className="text-5xl md:text-6xl leading-tight font-light text-[#0F6B65]">
+    <div className="space-y-2">
+      <h2 className="text-[42px] md:text-[48px] lg:text-[50px] leading-[1.05] font-light tracking-[-1.5px] text-[#1E1E1E]">
         {title}
-        {italicWord && (
-          <>
-            <br />
-            <span className="italic font-serif text-gray-900">
-              {italicWord}
-            </span>
-          </>
-        )}
       </h2>
+
+      <div className="flex items-center gap-5">
+        <span className="block h-[1px] w-[58px] bg-[#CBAF78]" />
+
+        <span className="font-serif italic text-[58px] md:text-[64px] lg:text-[70px] leading-[0.9] text-[#1E1E1E]">
+          {italicTitle}
+        </span>
+      </div>
     </div>
   );
 }
