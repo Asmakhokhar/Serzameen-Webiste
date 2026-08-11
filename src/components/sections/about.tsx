@@ -21,10 +21,12 @@ export default function About() {
         alt=""
         className="
           absolute
-          inset-x-0
+          left-1/2
           top-0
           h-[50%]
           w-full
+          max-w-[1200px]
+          -translate-x-1/2
           object-cover
           object-center
           opacity-100

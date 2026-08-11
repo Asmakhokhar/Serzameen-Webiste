@@ -1,10 +1,11 @@
 import { Hero } from "@/components/sections/hero";
 import { ListingsGrid } from "@/components/sections/listings-grid";
 import { WhyUs } from "@/components/sections/why-us";
-import  Navbar from "@/components/layout/navbar";
+import Navbar from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { listings } from "@/data/listings";
 import About from "@/components/sections/about";
+import FeaturedProperties from "@/components/sections/featured-properties";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
@@ -12,6 +13,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <About />
+        <FeaturedProperties />
         <ListingsGrid listings={listings} />
         <WhyUs />
         <section id="contact" className="mx-auto max-w-7xl px-6 py-16 lg:px-8">

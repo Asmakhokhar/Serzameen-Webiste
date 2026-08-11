@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
+import SectionButton from "../shared/section-button";
 
 export function Hero() {
   return (
@@ -41,21 +41,21 @@ export function Hero() {
           </p>
           {/* Buttons */}
 
-          <div className="mt-10 flex gap-5">
-            <Button
-              size="lg"
-              className="rounded-full bg-[#0E8AA7] px-8 hover:bg-[#0a7085]"
+          <div className="mt-10 flex flex-wrap gap-5">
+            <SectionButton
+              href="/properties"
+              className="rounded-full border-[#0E8AA7] bg-[#0E8AA7] px-8 py-3 text-white hover:border-[#0a7085] hover:bg-[#0a7085]"
             >
               Explore Properties
-            </Button>
+            </SectionButton>
 
-            <Button
+            <SectionButton
+              href="/contact"
               variant="outline"
-              size="lg"
-              className="rounded-full border-white bg-transparent px-8 text-white hover:bg-white hover:text-[#0D3B4A]"
+              className="rounded-full border-white bg-transparent px-8 py-3 text-white hover:bg-white hover:text-[#0D3B4A]"
             >
               Book a Visit
-            </Button>
+            </SectionButton>
           </div>
 
           {/* Rating */}

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Logo from "./logo";
-import { Button } from "../ui/button";
+import SectionButton from "../shared/section-button";
 
 const links = [
   { title: "Home", href: "/" },
@@ -56,16 +56,17 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <Button
-          className={`rounded-md px-7 h-10
+        <SectionButton
+          href="/contact"
+          className={`h-10 rounded-full px-7 py-2 text-sm font-medium
           ${
             scrolled
-              ? "bg-[#0E8AA7] hover:bg-[#09738a]"
-              : "bg-white text-[#0D3B4A] hover:bg-[#ececec]"
+              ? "border-[#0E8AA7] bg-[#0E8AA7] text-white hover:border-[#09738a] hover:bg-[#09738a]"
+              : "border-white bg-white text-[#0D3B4A] hover:border-[#ececec] hover:bg-[#ececec]"
           }`}
         >
           Book a Visit
-        </Button>
+        </SectionButton>
 
       </div>
     </header>
