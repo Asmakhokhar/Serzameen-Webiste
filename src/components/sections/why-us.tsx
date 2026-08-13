@@ -1,3 +1,4 @@
+import AboutHeading from "@/components/shared/section-heading";
 import WhyUsCard from "@/components/shared/why-us-card";
 import { whyUsItems } from "@/data/why-us";
 
@@ -28,6 +29,7 @@ export function WhyUs() {
       />
 
       {/* Soft background glow */}
+      
       <div
         aria-hidden="true"
         className="
@@ -58,7 +60,7 @@ export function WhyUs() {
         >
           {/* Left */}
           <div>
-            <span
+            {/* <span
               className="
                 inline-flex
                 items-center
@@ -78,28 +80,11 @@ export function WhyUs() {
             >
               <span className="text-[#D7C08A]">✦</span>
               Why Serzameen
-            </span>
+            </span> */}
 
-            <h2
-              className="
-                mt-6
-                max-w-[600px]
-                font-serif
-                text-[46px]
-                font-normal
-                leading-[1.02]
-                tracking-[-1.5px]
-                text-[#202020]
-                md:text-[58px]
-                lg:text-[68px]
-              "
-            >
-              A more thoughtful
-              <br />
-              way to find
-              <br />
-              <span className="italic text-[#0F6B65]">your place.</span>
-            </h2>
+            <div className="mt-6">
+              <AboutHeading title="A more thoughtful" italicTitle="way to find your place." />
+            </div>
           </div>
 
           {/* Right */}

@@ -4,11 +4,6 @@ import { featuredProperties } from "@/data/featured-properties";
 export default function FeaturedProperties() {
   return (
     <section className="relative overflow-hidden bg-[#FCFBF8] py-24 md:py-28">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#E8E0D2]"
-      />
-
       <div className="mx-auto max-w-[1250px] px-6">
         <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[650px]">

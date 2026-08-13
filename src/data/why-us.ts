@@ -21,7 +21,7 @@ export const whyUsItems: WhyUsItem[] = [
     description:
       "From your first enquiry to your final decision, we bring market knowledge, thoughtful advice and a clear understanding of what matters to you.",
     icon: "◈",
-    image: "/why-us.jpg",
+    image: "/why2.jfif",
     featured: true,
   },
   {

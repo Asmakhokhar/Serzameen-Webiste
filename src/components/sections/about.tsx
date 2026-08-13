@@ -1,84 +1,42 @@
-import Image from "next/image";
+import AboutVisual from "@/components/shared/about-visual";
 import AboutHeading from "../shared/section-heading";
 import SectionButton from "../shared/section-button";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="
-        relative
-        overflow-hidden
-        bg-[#FCFCFA]
-        py-24
-        md:py-28
-        lg:py-32
-      "
-    >
-      {/* About Background PNG */}
-      <img
-        src="/about-bg.png"
-        alt=""
-        className="
-          absolute
-          left-1/2
-          top-0
-          h-[50%]
-          w-full
-          max-w-[1200px]
-          -translate-x-1/2
-          object-cover
-          object-center
-          opacity-100
-          pointer-events-none
-          z-0
-        "
+    <section id="about" className="relative overflow-hidden bg-[#FCFBF8] py-24 md:py-28 lg:py-32">
+      {/* Subtle decorative grid */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(to_right,rgba(15,107,101,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,107,101,0.035)_1px,transparent_1px)] [background-size:90px_90px]"
       />
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-[1150px] px-6">
-        <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.95fr] lg:gap-20">
+      <div className="relative z-10 mx-auto max-w-[1180px] px-6">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
 
-          {/* IMAGE */}
-          <div className="relative">
-            <div className="relative h-[520px] overflow-hidden rounded-[12px] md:h-[580px] lg:h-[620px]">
-              <Image
-                src="/hero.jpg"
-                alt="Serzameen Estate"
-                fill
-                className="
-                  object-cover
-                  transition-transform
-                  duration-700
-                  hover:scale-[1.03]
-                "
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </div>
+          {/* LEFT VISUAL */}
+          <AboutVisual />
 
-          {/* CONTENT */}
+          {/* RIGHT CONTENT */}
           <div className="max-w-[500px]">
+            {/* <span className="block text-[11px] font-medium uppercase tracking-[5px] text-[#0F6B65]">About Us</span> */}
 
-            <AboutHeading
-              title="Investing with"
-              italicTitle="purpose"
-            />
-
-            <p className="mt-9 text-[16px] leading-[1.8] text-[#454545]">
-              Throughout our journey, we have developed a deep understanding
-              of the property market and the opportunities it offers. At
-              Serzameen Estate, we combine market knowledge with a thoughtful
-              approach to help our clients discover properties that offer
-              exceptional living and lasting value.
-            </p>
-
-            <div className="mt-9">
-              <SectionButton href="/properties">
-                Available Properties
-              </SectionButton>
+            <div className="mt-5">
+              <AboutHeading title="Discover a place" italicTitle="worth calling home." />
             </div>
 
+            {/* <div className="mt-6 flex items-center gap-4">
+              <span className="h-px w-12 bg-[#D7C08A]" />
+              <span className="text-[10px] uppercase tracking-[3px] text-[#A28D64]">Serzameen Estate</span>
+            </div> */}
+
+            <div className="mt-7 space-y-4 text-[15px] leading-[1.9] text-[#666]">
+              <p>At Serzameen Estate, we believe finding the right property should feel considered, personal and effortless.</p>
+
+              <p>From exceptional waterfront residences to refined urban homes, we carefully connect our clients with properties selected for their character, location and long-term value.</p>
+            </div>
+
+            <SectionButton href="/properties" className="mt-9">Explore Properties</SectionButton>
           </div>
         </div>
       </div>
