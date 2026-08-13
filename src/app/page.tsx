@@ -7,6 +7,8 @@ import { listings } from "@/data/listings";
 import About from "@/components/sections/about";
 import FeaturedProperties from "@/components/sections/featured-properties";
 import CallToAction from "@/components/sections/cta";
+import Contact from "@/components/sections/contact";
+import ContactMap from "@/components/sections/contact-map";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
@@ -17,6 +19,8 @@ export default function Home() {
         <FeaturedProperties />
         <ListingsGrid listings={listings} />
         <WhyUs />
+        <Contact />
+        <ContactMap />
         <CallToAction />
       </main>
       <Footer />
