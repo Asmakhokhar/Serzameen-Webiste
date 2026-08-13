@@ -12,13 +12,13 @@ export default function WhyUsCard({ item }: WhyUsCardProps) {
     return (
       <article className="relative z-10 w-full overflow-hidden rounded-[18px] border border-[#E8E2D8] bg-white shadow-[0_18px_50px_rgba(15,107,101,0.08)] lg:-mt-14">
         {image && (
-          <div className="relative h-[220px] overflow-hidden">
+          <div className="relative h-55 overflow-hidden">
             <Image src={image} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 420px" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0F6B65]/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#0F6B65]/20 to-transparent" />
           </div>
         )}
 
-        <div className="flex min-h-[350px] flex-col p-7 md:p-8">
+        <div className="flex min-h-87.5 flex-col p-7 md:p-8">
           <span aria-hidden="true" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E4DED3] text-sm text-[#0F6B65]">
             {icon}
           </span>
@@ -27,14 +27,14 @@ export default function WhyUsCard({ item }: WhyUsCardProps) {
 
           <h3 className="mt-3 max-w-[320px] font-serif text-[31px] leading-[1.08] text-[#202020] md:text-[34px]">{title}</h3>
 
-          <p className="mt-auto max-w-[350px] pt-8 text-[14px] leading-[1.8] text-[#6A6A6A]">{description}</p>
+          <p className="mt-auto max-w-87.5 pt-8 text-[14px] leading-[1.8] text-[#6A6A6A]">{description}</p>
         </div>
       </article>
     );
   }
 
   return (
-    <article className="group flex min-h-[320px] flex-col rounded-[18px] border border-[#E8E2D8] bg-white/75 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#D7C08A] hover:bg-white md:p-8">
+    <article className="group flex min-h-80 flex-col rounded-[18px] border border-[#E8E2D8] bg-white/75 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#D7C08A] hover:bg-white md:p-8">
       <span className="font-serif text-[46px] leading-none tracking-[-2px] text-[#E8E8E8] transition-colors duration-500 group-hover:text-[#D7C08A]/60">{number}</span>
 
       <div className="mt-auto">

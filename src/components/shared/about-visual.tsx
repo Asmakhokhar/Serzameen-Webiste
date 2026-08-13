@@ -10,16 +10,16 @@ export function ExperienceCard({ years = 15 }: { years?: number }) {
     <div
       className="
         absolute
-        left-[180px]
+        left-45
         top-4
         z-20
-        w-[165px]
+        w-41.25
         rounded-[6px]
         bg-white
         p-5
         shadow-[0_12px_35px_rgba(0,0,0,0.07)]
-        md:left-[205px]
-        md:w-[180px]
+        md:left-51.25
+        md:w-45
       "
     >
       <div className="flex items-start justify-between gap-2">
@@ -42,14 +42,14 @@ export function RatingCard({ rating = 4.9 }: { rating?: number }) {
       className="
         absolute
         bottom-2
-        left-[120px]
+        left-30
         z-20
         rounded-[6px]
         bg-white
         px-5
         py-4
         shadow-[0_12px_35px_rgba(0,0,0,0.07)]
-        md:left-[135px]
+        md:left-33.75
       "
     >
       <p className="text-[9px] uppercase tracking-[2px] text-[#999]">Client trust</p>
@@ -74,14 +74,14 @@ export default function AboutVisual({
   rating?: number;
 }) {
   return (
-    <div className="relative mx-auto h-[560px] w-full max-w-[560px]">
+    <div className="relative mx-auto h-140 w-full max-w-140">
       {/* Primary image */}
-      <div className="absolute bottom-8 left-0 h-[330px] w-[270px] overflow-hidden rounded-[6px] md:h-[365px] md:w-[300px]">
+      <div className="absolute bottom-8 left-0 h-82.5 w-67.5 overflow-hidden rounded-[6px] md:h-91.25 md:w-75">
         <Image src={primarySrc} alt="Property exterior" fill className="object-cover" sizes="300px" priority />
       </div>
 
       {/* Secondary image */}
-      <div className="absolute bottom-0 right-0 h-[280px] w-[260px] overflow-hidden rounded-[6px] md:h-[315px] md:w-[285px]">
+      <div className="absolute bottom-0 right-0 h-70 w-65 overflow-hidden rounded-[6px] md:h-78.75 md:w-71.25">
         <Image src={secondarySrc} alt="Property interior" fill className="object-cover" sizes="285px" />
       </div>
 

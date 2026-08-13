@@ -14,7 +14,7 @@ export default function AboutHeading({
       </h2>
 
       <div className="flex items-center gap-5">
-        <span className="block h-[1px] w-[58px] bg-[#CBAF78]" />
+        <span className="block h-px w-14.5 bg-[#CBAF78]" />
 
         <span className="font-serif italic text-[58px] md:text-[64px] lg:text-[70px] leading-[0.9] text-[#1E1E1E]">
           {italicTitle}

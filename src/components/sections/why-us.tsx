@@ -23,8 +23,8 @@ export function WhyUs() {
           absolute
           inset-0
           opacity-60
-          [background-image:linear-gradient(to_right,rgba(15,107,101,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,107,101,0.045)_1px,transparent_1px)]
-          [background-size:72px_72px]
+          bg-[linear-gradient(to_right,rgba(15,107,101,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,107,101,0.045)_1px,transparent_1px)]
+          bg-size-[72px_72px]
         "
       />
 
@@ -37,17 +37,17 @@ export function WhyUs() {
           absolute
           left-1/2
           top-1/2
-          h-[500px]
-          w-[500px]
+          h-125
+          w-125
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
-          bg-[#D7C08A]/[0.05]
+          bg-[#D7C08A]/5
           blur-3xl
         "
       />
 
-      <div className="relative z-10 mx-auto max-w-[1240px] px-6">
+      <div className="relative z-10 mx-auto max-w-310 px-6">
 
         {/* Section Header */}
         <div
@@ -88,7 +88,7 @@ export function WhyUs() {
           </div>
 
           {/* Right */}
-          <div className="max-w-[430px] lg:ml-auto lg:pb-2">
+          <div className="max-w-107.5 lg:ml-auto lg:pb-2">
             <p
               className="
                 text-[14px]
