@@ -3,20 +3,24 @@ import SectionButton from "../shared/section-button";
 
 export function Hero() {
   return (
-    <section className="relative isolate h-screen overflow-hidden">
+    <section className="relative isolate overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/bg-2.png"
+        src="/bg-1.png"
         alt=""
-        fill
+        width={660}
+        height={378}
         priority
-        className="absolute inset-0 z-0 object-cover w-auto h-auto"
+        className="block h-auto w-full"
       />
+
+      {/* Bottom white fade */}
+      <div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-white via-white/70 to-transparent" />
 
       {/* <div className="absolute inset-0 z-10 bg-black/35" /> */}
 
       {/* Overlay */}
-      <div className="relative z-20 container mx-auto flex h-full items-center">
+      <div className="absolute inset-0 z-20 container mx-auto flex items-center">
         <div className="max-w-2xl">
           {/* Badge */}
          
