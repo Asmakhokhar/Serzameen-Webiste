@@ -6,14 +6,14 @@ export function Hero() {
     <section className="relative isolate h-screen overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/hero2.png"
+        src="/bg-2.png"
         alt=""
         fill
         priority
         className="absolute inset-0 z-0 object-cover w-auto h-auto"
       />
 
-      <div className="absolute inset-0 z-10 bg-black/35" />
+      {/* <div className="absolute inset-0 z-10 bg-black/35" /> */}
 
       {/* Overlay */}
       <div className="relative z-20 container mx-auto flex h-full items-center">
