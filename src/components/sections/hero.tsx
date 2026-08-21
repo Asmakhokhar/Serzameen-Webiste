@@ -19,14 +19,7 @@ export function Hero() {
       <div className="relative z-20 container mx-auto flex h-full items-center">
         <div className="max-w-2xl">
           {/* Badge */}
-          <div className="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-md">
-            <span className="mr-2 text-[#D7C08A]">●</span>
-
-            <span className="text-sm uppercase tracking-[0.25em] text-white">
-              Luxury Coastal Living
-            </span>
-          </div>
-
+         
           {/* Heading */}
           <h1 className="max-w-2xl text-6xl font-semibold leading-tight text-white lg:text-7xl">
             Find Your Dream

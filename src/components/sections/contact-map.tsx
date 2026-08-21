@@ -1,7 +1,7 @@
 import LocationMap from "@/components/shared/location-map";
 
 const MAP_URL =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d";
+  "https://www.google.com/maps?q=Dubai%2C%20United%20Arab%20Emirates&output=embed";
 
 export default function ContactMap() {
   return (
