@@ -9,7 +9,7 @@ export default function Logo({ colored = false }: LogoProps) {
   return (
     <Link href="/" className="flex items-center gap-3">
       <Image
-        src={colored ? "/logo.png" : "/logo.png"}
+        src={colored ? "/logo2.png" : "/logo2.png"}
         alt="Serzameen Estate"
         width={52}
         height={52}

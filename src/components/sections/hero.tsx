@@ -3,7 +3,7 @@ import SectionButton from "../shared/section-button";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="relative isolate h-screen overflow-hidden">
       {/* Background Image */}
       <Image
         src="/bg-1.png"
@@ -15,7 +15,7 @@ export function Hero() {
       />
 
       {/* Bottom white fade */}
-      <div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-white via-white/70 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-linear-to-t from-white via-white/70 to-transparent" />
 
       {/* <div className="absolute inset-0 z-10 bg-black/35" /> */}
 
