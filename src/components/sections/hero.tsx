@@ -6,12 +6,12 @@ export function Hero() {
     <section className="relative isolate h-screen overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/bg-1.png"
+        src="/hero2.png"
         alt=""
-        width={660}
-        height={378}
+        fill
         priority
-        className="block h-auto w-full"
+        sizes="100vw"
+        className="object-cover object-[62%_center]"
       />
 
       {/* Bottom white fade */}

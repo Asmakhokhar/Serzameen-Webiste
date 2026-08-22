@@ -1,9 +1,8 @@
 import { Hero } from "@/components/sections/hero";
-import { ListingsGrid } from "@/components/sections/listings-grid";
+import  VisionSection  from "@/components/sections/vision";
 import { WhyUs } from "@/components/sections/why-us";
 import Navbar from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { listings } from "@/data/listings";
 import About from "@/components/sections/about";
 import FeaturedProperties from "@/components/sections/featured-properties";
 import CallToAction from "@/components/sections/cta";
@@ -15,9 +14,13 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <VisionSection
+        darkText="Thoughtfully selected spaces for people who value"
+        image="/4.jpg"
+        grayText="comfort, character, and timeless living."
+      />
         <About />
         <FeaturedProperties />
-        <ListingsGrid listings={listings} />
         <WhyUs />
         <Contact />
         <ContactMap />
