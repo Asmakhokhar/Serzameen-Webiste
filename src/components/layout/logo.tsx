@@ -17,19 +17,19 @@ export default function Logo({ colored = false }: LogoProps) {
       />
 
       <div className="leading-none">
-        <h2
-          className={`text-[24px] font-semibold tracking-[0.18em]
-          ${colored ? "text-[#0D3B4A]" : "text-white"}`}
+        <p
+          className={`text-[20px] tracking-[0.18em]
+          ${colored ? "text-[#0E8AA7]" : "text-white"}`}
         >
           SERZAMEEN
-        </h2>
+        </p>
 
-        <p
+        {/* <p
           className={`text-[11px] tracking-[0.35em] mt-1
           ${colored ? "text-[#A88A4B]" : "text-white/80"}`}
         >
           ESTATE
-        </p>
+        </p> */}
       </div>
     </Link>
   );
