@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Logo from "./logo";
 import { FooterColumn, FooterLink } from "../shared/footer-components";
 
@@ -11,31 +12,28 @@ const navigation = [
 ];
 
 const socialLinks = [
-  { label: "Instagram", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "LinkedIn", href: "#" },
+  { label: "Instagram", href: "#", icon: FaInstagram },
+  { label: "Facebook", href: "#", icon: FaFacebookF },
+  { label: "LinkedIn", href: "#", icon: FaLinkedin },
 ];
 
 export function Footer() {
   return (
     <footer className="bg-[#FCFBF8] text-[#1E1E1E]">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <div className="border-t border-[#E4DED3] py-14 md:py-16">
           <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:gap-10">
-            <div className="max-w-[340px]">
+            <div className="max-w-85">
               <Logo colored />
-              <p className="mt-6 max-w-[300px] text-[13px] leading-[1.9] text-[#6B6B6B]">
+              <p className="mt-6 max-w-75 text-[13px] leading-[1.9] text-[#6B6B6B]">
                 Thoughtfully selected properties for refined living, meaningful
                 investment, and a place you can truly call home.
               </p>
               <Link
                 href="/properties"
-                className="group mt-7 inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[2px] text-[#0F6B65] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0F6B65]"
+                className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[#0F6B65] px-5 py-3 text-[11px] font-medium uppercase tracking-[1.5px] text-[#0F6B65] transition-all duration-300 hover:bg-[#0F6B65] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0F6B65]"
               >
                 Explore Properties
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
               </Link>
             </div>
 
@@ -54,7 +52,7 @@ export function Footer() {
               <FooterLink href="tel:+971000000000">
                 +971 00 000 0000
               </FooterLink>
-              <p className="max-w-[180px] text-[13px] leading-6 text-[#6B6B6B]">
+              <p className="max-w-45 text-[13px] leading-6 text-[#6B6B6B]">
                 Dubai,
                 <br />
                 United Arab Emirates
@@ -62,11 +60,23 @@ export function Footer() {
             </FooterColumn>
 
             <FooterColumn title="Follow">
-              {socialLinks.map((social) => (
-                <FooterLink key={social.label} href={social.href}>
-                  {social.label}
-                </FooterLink>
-              ))}
+              <div className="flex flex-row items-center gap-2">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+
+                  return (
+                    <Link
+                      key={social.label}
+                      href={social.href}
+                      aria-label={social.label}
+                      title={social.label}
+                      className="inline-flex size-10 items-center justify-center rounded-full border border-[#E4DED3] text-[#555] transition-all duration-300 hover:border-[#0F6B65] hover:bg-[#0F6B65] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0F6B65]"
+                    >
+                      <Icon aria-hidden="true" className="size-4" />
+                    </Link>
+                  );
+                })}
+              </div>
             </FooterColumn>
           </div>
         </div>

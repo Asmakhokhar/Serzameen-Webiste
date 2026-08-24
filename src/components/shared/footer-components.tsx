@@ -17,7 +17,7 @@ export function FooterColumn({ title, children }: FooterColumnProps) {
   );
 }
 
-interface FooterLinkProps {
+ interface FooterLinkProps {
   href: string;
   children: ReactNode;
 }
