@@ -1,7 +1,11 @@
+"use client";
+
 import PropertyCard from "../shared/property-card";
-import { featuredProperties } from "@/data/featured-properties";
+import { useFeaturedProperties } from "@/hooks/use-featured-properties";
 
 export default function FeaturedProperties() {
+  const { data: featuredProperties = [] } = useFeaturedProperties();
+
   return (
     <section className="relative overflow-hidden bg-[#FCFBF8] py-24 md:py-28">
       <div className="mx-auto max-w-312.5 px-6">

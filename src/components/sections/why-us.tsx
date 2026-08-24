@@ -1,8 +1,12 @@
+"use client";
+
 import AboutHeading from "@/components/shared/section-heading";
 import WhyUsCard from "@/components/shared/why-us-card";
-import { whyUsItems } from "@/data/why-us";
+import { useWhyUs } from "@/hooks/use-why-us";
 
 export function WhyUs() {
+  const { data: whyUsItems = [] } = useWhyUs();
+
   return (
     <section
       id="why-us"

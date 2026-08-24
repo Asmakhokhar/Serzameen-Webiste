@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
+import Providers from "@/components/providers";
 
 export const heading = Cormorant_Garamond({
   subsets: ["latin"],
@@ -24,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className={`min-h-full flex flex-col bg-slate-50 text-slate-900 ${heading.variable} ${body.variable}`}>{children}</body>
+      <body className={`min-h-full flex flex-col bg-slate-50 text-slate-900 ${heading.variable} ${body.variable}`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 interface LogoProps {
   colored?: boolean;
@@ -7,7 +6,7 @@ interface LogoProps {
 
 export default function Logo({ colored = false }: LogoProps) {
   return (
-    <Link href="/" className="flex items-center gap-3">
+    <div className="flex items-center gap-3">
       <Image
         src={colored ? "/logo2.png" : "/logo2.png"}
         alt="Serzameen Estate"
@@ -31,6 +30,6 @@ export default function Logo({ colored = false }: LogoProps) {
           ESTATE
         </p> */}
       </div>
-    </Link>
+    </div>
   );
 }
