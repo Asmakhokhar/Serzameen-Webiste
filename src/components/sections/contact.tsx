@@ -14,6 +14,11 @@ interface ContactDetailProps {
   icon: React.ReactNode;
 }
 
+interface ContactProps {
+  showIntro?: boolean;
+  description?: string;
+}
+
 function ContactDetail({
   label,
   value,
@@ -75,7 +80,10 @@ function ContactDetail({
   return <div>{content}</div>;
 }
 
-export default function Contact() {
+export default function Contact({
+  showIntro = true,
+  description = "Whether you&apos;re searching for a new home, exploring an investment opportunity, or simply want to know more about the market, we&apos;re here to help.",
+}: ContactProps) {
   return (
     <section
       id="contact"
@@ -113,37 +121,37 @@ export default function Contact() {
         >
           {/* Left */}
           <div className="max-w-[420px]">
-            <span
-              className="
-                mb-4
-                block
-                text-[10px]
-                font-medium
-                uppercase
-                tracking-[4px]
-                text-[#0F6B65]
-              "
-            >
-              Get In Touch
-            </span>
+            {showIntro && (
+              <>
+                <span
+                  className="
+                    mb-4
+                    block
+                    text-[10px]
+                    font-medium
+                    uppercase
+                    tracking-[4px]
+                    text-[#0F6B65]
+                  "
+                >
+                  Get In Touch
+                </span>
 
-            <AboutHeading
-              title="Let's find your"
-              italicTitle="place"
-            />
+                <AboutHeading
+                  title="Let's find your"
+                  italicTitle="place"
+                />
+              </>
+            )}
 
             <p
-              className="
-                mt-7
-                max-w-[390px]
-                text-[14px]
-                leading-[1.85]
-                text-[#666]
-              "
+              className={
+                showIntro
+                  ? "mt-7 max-w-[390px] text-[14px] leading-[1.85] text-[#666]"
+                  : "max-w-[430px] text-[15px] leading-[1.8] text-[#666]"
+              }
             >
-              Whether you&apos;re searching for a new home, exploring an
-              investment opportunity, or simply want to know more about
-              the market, we&apos;re here to help.
+              {description}
             </p>
 
             {/* Contact details */}

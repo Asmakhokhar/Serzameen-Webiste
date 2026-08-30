@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import Logo from "./logo";
@@ -16,25 +16,19 @@ const NAV_LINKS = [
 
 const SCROLL_THRESHOLD = 32;
 
-function subscribeToScroll(onChange: () => void) {
-  window.addEventListener("scroll", onChange, { passive: true });
-  return () => window.removeEventListener("scroll", onChange);
-}
-
-function getScrolledSnapshot() {
-  return window.scrollY > SCROLL_THRESHOLD;
-}
-
-function getServerScrolledSnapshot() {
-  return false;
-}
-
 export default function Navbar() {
-  const scrolled = useSyncExternalStore(
-    subscribeToScroll,
-    getScrolledSnapshot,
-    getServerScrolledSnapshot
-  );
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header

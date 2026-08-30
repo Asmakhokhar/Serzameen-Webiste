@@ -1,9 +1,12 @@
 "use client";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
+
 import PropertyCard from "../shared/property-card";
 import { useFeaturedProperties } from "@/hooks/use-featured-properties";
 
-export default function FeaturedProperties() {
+function FeaturedPropertiesContent() {
   const { data: featuredProperties = [] } = useFeaturedProperties();
 
   return (
@@ -39,5 +42,15 @@ export default function FeaturedProperties() {
         </div>
       </div>
     </section>
+  );
+}
+
+export default function FeaturedProperties() {
+  const [queryClient] = useState(() => new QueryClient());
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <FeaturedPropertiesContent />
+    </QueryClientProvider>
   );
 }

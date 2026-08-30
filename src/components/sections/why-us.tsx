@@ -1,10 +1,13 @@
 "use client";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
+
 import AboutHeading from "@/components/shared/section-heading";
 import WhyUsCard from "@/components/shared/why-us-card";
 import { useWhyUs } from "@/hooks/use-why-us";
 
-export function WhyUs() {
+function WhyUsContent() {
   const { data: whyUsItems = [] } = useWhyUs();
 
   return (
@@ -33,7 +36,6 @@ export function WhyUs() {
       />
 
       {/* Soft background glow */}
-      
       <div
         aria-hidden="true"
         className="
@@ -52,7 +54,6 @@ export function WhyUs() {
       />
 
       <div className="relative z-10 mx-auto max-w-310 px-6">
-
         {/* Section Header */}
         <div
           className="
@@ -64,28 +65,6 @@ export function WhyUs() {
         >
           {/* Left */}
           <div>
-            {/* <span
-              className="
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                border
-                border-[#E5DED2]
-                bg-white/70
-                px-4
-                py-2
-                text-[10px]
-                font-medium
-                uppercase
-                tracking-[3px]
-                text-[#0F6B65]
-              "
-            >
-              <span className="text-[#D7C08A]">✦</span>
-              Why Serzameen
-            </span> */}
-
             <div className="mt-6">
               <AboutHeading title="A more thoughtful" italicTitle="way to find your place." />
             </div>
@@ -149,8 +128,17 @@ export function WhyUs() {
             <WhyUsCard key={item.number} item={item} />
           ))}
         </div>
-
       </div>
     </section>
+  );
+}
+
+export function WhyUs() {
+  const [queryClient] = useState(() => new QueryClient());
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <WhyUsContent />
+    </QueryClientProvider>
   );
 }
