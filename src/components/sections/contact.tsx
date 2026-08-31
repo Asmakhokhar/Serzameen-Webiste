@@ -30,16 +30,16 @@ function ContactDetail({
       <span
         className="
           flex
-          h-10
-          w-10
+          h-11
+          w-11
           shrink-0
           items-center
           justify-center
           rounded-full
-          border
-          border-[#E4DCCF]
-          bg-white
+          border-0
+          bg-[#F3F4F1]
           text-[#0F6B65]
+          shadow-[0_10px_25px_rgba(15,107,101,0.08)]
         "
       >
         {icon}

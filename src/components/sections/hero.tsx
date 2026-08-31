@@ -111,40 +111,9 @@ export default function Hero() {
           <div className="mt-9 flex justify-center">
             <SectionButton
               href="/contact"
-              className="
-                group
-                rounded-full
-                border-[#D7C08A]
-                bg-[#D7C08A]
-                px-8
-                py-3.5
-                font-[var(--font-manrope)]
-                text-[11px]
-                font-semibold
-                uppercase
-                tracking-[1.5px]
-                text-[#1E1E1E]
-                transition-all
-                duration-300
-                hover:border-[#E3D19F]
-                hover:bg-[#E3D19F]
-                hover:shadow-[0_10px_35px_rgba(215,192,138,0.2)]
-              "
+              className="text-white"
             >
               <span>Get Started</span>
-
-              <span
-                aria-hidden="true"
-                className="
-                  ml-2
-                  inline-block
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
-              >
-                →
-              </span>
             </SectionButton>
           </div>
         </div>

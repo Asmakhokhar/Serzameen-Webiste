@@ -1,92 +1,142 @@
-import type { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
+import type {
+  InputHTMLAttributes,
+  ReactNode,
+  TextareaHTMLAttributes,
+} from "react";
 
 interface BaseFieldProps {
   label: string;
   name: string;
   required?: boolean;
+  icon: ReactNode;
   className?: string;
 }
 
-type ContactFieldProps =
-  | (BaseFieldProps & {
-      type?: "text" | "email" | "tel";
-      textarea?: false;
-      placeholder?: string;
-      inputProps?: Omit<
-        InputHTMLAttributes<HTMLInputElement>,
-        "name" | "placeholder" | "required"
-      >;
-    })
-  | (BaseFieldProps & {
-      textarea: true;
-      placeholder?: string;
-      inputProps?: Omit<
-        TextareaHTMLAttributes<HTMLTextAreaElement>,
-        "name" | "placeholder" | "required"
-      >;
-    });
+interface InputFieldProps extends BaseFieldProps {
+  textarea?: false;
+  type?: "text" | "email" | "tel";
+  placeholder?: string;
+  inputProps?: Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "name" | "required" | "placeholder"
+  >;
+}
 
-const FIELD_CLASSES = `
-  w-full
-  border-0
-  border-b
-  border-[#D9D1C3]
-  bg-transparent
-  px-0
-  py-3
-  text-[15px]
-  text-[#1E1E1E]
-  outline-none
-  placeholder:text-[#A5A5A5]
-  transition-colors
-  duration-300
-  focus:border-[#0F6B65]
-`;
+interface TextareaFieldProps extends BaseFieldProps {
+  textarea: true;
+  placeholder?: string;
+  inputProps?: Omit<
+    TextareaHTMLAttributes<HTMLTextAreaElement>,
+    "name" | "required" | "placeholder"
+  >;
+}
 
-export default function ContactField(props: ContactFieldProps) {
-  const {
-    label,
-    name,
-    required = false,
-    placeholder,
-    className = "",
-  } = props;
+type ContactFieldProps = InputFieldProps | TextareaFieldProps;
 
+export default function ContactField({
+  label,
+  name,
+  required = false,
+  icon,
+  placeholder,
+  className = "",
+  ...props
+}: ContactFieldProps) {
   return (
-    <div className={`space-y-2 ${className}`}>
+    <div className={`group ${className}`}>
       <label
         htmlFor={name}
-        className="block text-xs font-medium uppercase tracking-widest text-[#3D3D3D]"
+        className="
+          mb-2
+          flex
+          items-center
+          gap-2
+          text-[10px]
+          font-medium
+          uppercase
+          tracking-[2px]
+          text-[#6A6A6A]
+        "
       >
         {label}
+
         {required && (
-          <span className="ml-1 text-[#D7C08A]" aria-hidden="true">
+          <span className="text-[#CBAF78]" aria-hidden="true">
             *
           </span>
         )}
       </label>
 
-      {props.textarea ? (
-        <textarea
-          id={name}
-          name={name}
-          required={required}
-          placeholder={placeholder}
-          rows={5}
-          {...props.inputProps}
-          className={`${FIELD_CLASSES} resize-none leading-6`}
-        />
-      ) : (
-        <input
-          id={name}
-          name={name}
-          type={props.type ?? "text"}
-          required={required}
-          placeholder={placeholder}
-          {...props.inputProps}
-          className={FIELD_CLASSES}
-        />
-      )}
+      <div
+        className="
+          flex
+          items-center
+          gap-3
+          border-b
+          border-[#DED7CB]
+          transition-colors
+          duration-300
+          group-focus-within:border-[#0F6B65]
+        "
+      >
+        <span
+          className="
+            shrink-0
+            text-[#CBAF78]
+            transition-colors
+            duration-300
+            group-focus-within:text-[#0F6B65]
+          "
+        >
+          {icon}
+        </span>
+
+        {props.textarea ? (
+          <textarea
+            id={name}
+            name={name}
+            required={required}
+            placeholder={placeholder}
+            rows={3}
+            {...props.inputProps}
+            className="
+              min-h-[82px]
+              w-full
+              resize-none
+              border-0
+              bg-transparent
+              px-0
+              py-2.5
+              text-[13px]
+              leading-6
+              text-[#222]
+              outline-none
+              placeholder:text-[#A7A7A7]
+            "
+          />
+        ) : (
+          <input
+            id={name}
+            name={name}
+            type={props.type ?? "text"}
+            required={required}
+            placeholder={placeholder}
+            {...props.inputProps}
+            className="
+              h-10
+              w-full
+              border-0
+              bg-transparent
+              px-0
+              py-2
+              text-[13px]
+              text-[#222]
+              outline-none
+              placeholder:text-[#A7A7A7]
+            "
+          />
+        )}
+      </div>
     </div>
   );
 }
