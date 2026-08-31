@@ -1,44 +1,52 @@
+import Image from "next/image";
+
 import CtaButton from "@/components/shared/cta-button";
+import AboutHeading from "@/components/shared/section-heading";
 
 export default function Cta() {
   return (
     <section
+      id="cta"
       className="
+        relative
+        overflow-hidden
         bg-[#FCFBF8]
         px-6
-        py-10
-        md:py-12
+        py-12
+        md:py-16
+        lg:py-20
       "
     >
       <div className="mx-auto max-w-[1200px]">
+        {/* CTA Card */}
         <div
           className="
             relative
             overflow-hidden
-            rounded-[20px]
-            border
-            border-[#DED6C8]
-            bg-[#F5F1E9]
+            rounded-[24px]
+            bg-white
             px-7
             py-8
+            shadow-[0_20px_60px_rgba(15,107,101,0.05)]
             md:px-10
-            md:py-9
+            md:py-10
             lg:px-12
+            lg:py-11
           "
         >
-          {/* Decorative circle */}
+          {/* Decorative circles */}
           <div
             aria-hidden="true"
             className="
               pointer-events-none
               absolute
-              -right-20
+              -right-24
               -top-24
-              h-64
-              w-64
+              h-72
+              w-72
               rounded-full
               border
-              border-[#D7C08A]/30
+              border-[#D7C08A]/20
             "
           />
 
@@ -47,13 +55,13 @@ export default function Cta() {
             className="
               pointer-events-none
               absolute
-              -right-10
-              -top-14
-              h-44
-              w-44
+              -bottom-32
+              -left-24
+              h-72
+              w-72
               rounded-full
               border
-              border-[#0F6B65]/10
+              border-[#0F6B65]/[0.06]
             "
           />
 
@@ -62,62 +70,70 @@ export default function Cta() {
             className="
               relative
               z-10
-              flex
-              flex-col
-              gap-7
-              md:flex-row
+              grid
+              gap-10
+              md:grid-cols-[1fr_300px]
               md:items-center
-              md:justify-between
+              lg:grid-cols-[1fr_340px]
             "
           >
-            {/* Text */}
-            <div className="max-w-[650px]">
-              <span
-                className="
-                  block
-                  text-[10px]
-                  font-medium
-                  uppercase
-                  tracking-[4px]
-                  text-[#0F6B65]
-                "
-              >
-                Begin Your Journey
-              </span>
-
-              <h2
-                className="
-                  mt-3
-                  font-serif
-                  text-[30px]
-                  font-normal
-                  leading-[1.1]
-                  tracking-[-0.5px]
-                  text-[#1E1E1E]
-                  md:text-[34px]
-                "
-              >
-                Find a place that feels
-                <span className="italic text-[#0F6B65]"> right.</span>
-              </h2>
+            {/* Left Content */}
+            <div className="max-w-[620px]">
+              
+              <AboutHeading
+                title="Ready to find your"
+                italicTitle="place?"
+              />
 
               <p
                 className="
-                  mt-3
-                  max-w-[560px]
+                  mt-6
+                  max-w-[500px]
+                  font-[var(--font-manrope)]
                   text-[13px]
-                  leading-[1.7]
-                  text-[#6A6A6A]
+                  leading-6
+                  text-[#666]
                   md:text-[14px]
+                  md:leading-7
                 "
               >
-                Explore thoughtfully selected properties and let us help you
-                find your next home or investment.
+                Explore thoughtfully selected properties and let our team
+                help you find a home or investment that feels right.
               </p>
+
+              {/* CTA */}
+              <div className="mt-7">
+                <CtaButton href="/properties">
+                  Explore Properties
+                </CtaButton>
+              </div>
             </div>
 
-            {/* Action */}
-            <CtaButton href="/properties">Explore Properties</CtaButton>
+            {/* Right Image */}
+            <div
+              className="
+                relative
+                h-[220px]
+                w-full
+                overflow-hidden
+                rounded-[20px]
+                md:h-[260px]
+                lg:h-[290px]
+              "
+            >
+              <Image
+                src="/cta-img.png"
+                alt="Luxury property"
+                fill
+                sizes="(max-width: 768px) 100vw, 340px"
+                className="
+                  object-cover
+                  transition-transform
+                  duration-700
+                  hover:scale-105
+                "
+              />
+            </div>
           </div>
         </div>
       </div>

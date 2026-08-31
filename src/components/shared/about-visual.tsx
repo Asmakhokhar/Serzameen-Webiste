@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const DEFAULT_IMAGES = {
   primary: "/hero.jpg",
-  secondary: "/elite-prop-hmlP-v0vJ5o-unsplash.jpg",
+  secondary: "/bg-11.png",
 } as const;
 
 export function ExperienceCard({ years = 15 }: { years?: number }) {

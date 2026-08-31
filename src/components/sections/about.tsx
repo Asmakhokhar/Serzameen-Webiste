@@ -25,11 +25,6 @@ export default function About() {
               <AboutHeading title="Discover a place" italicTitle="worth calling home." />
             </div>
 
-            {/* <div className="mt-6 flex items-center gap-4">
-              <span className="h-px w-12 bg-[#D7C08A]" />
-              <span className="text-[10px] uppercase tracking-[3px] text-[#A28D64]">Serzameen Estate</span>
-            </div> */}
-
             <div className="mt-7 space-y-4 text-[15px] leading-[1.9] text-[#666]">
               <p>At Serzameen Estate, we believe finding the right property should feel considered, personal and effortless.</p>
 
