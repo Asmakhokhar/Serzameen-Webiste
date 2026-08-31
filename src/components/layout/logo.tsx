@@ -6,29 +6,23 @@ interface LogoProps {
 
 export default function Logo({ colored = false }: LogoProps) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-end">
       <Image
-        src={colored ? "/logo2.png" : "/logo2.png"}
+        src= "/nav.png"
         alt="Serzameen Estate"
-        width={52}
-        height={52}
+        width={60}
+        height={60}
         priority
       />
 
-      <div className="leading-none">
+      <div className="leading-none mb-2">
         <p
-          className={`text-[20px] tracking-[0.18em]
-          ${colored ? "text-[#0E8AA7]" : "text-white"}`}
+          className={`text-[18px] tracking-[0.19em]
+          text-white`}
         >
-          SERZAMEEN
+          Serzameen
         </p>
 
-        {/* <p
-          className={`text-[11px] tracking-[0.35em] mt-1
-          ${colored ? "text-[#A88A4B]" : "text-white/80"}`}
-        >
-          ESTATE
-        </p> */}
       </div>
     </div>
   );

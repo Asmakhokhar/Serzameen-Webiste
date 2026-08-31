@@ -2,13 +2,19 @@ import Link from "next/link";
 
 interface CtaButtonProps {
   href: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  label?: string;
+  className?: string;
 }
 
 export default function CtaButton({
   href,
   children,
+  label,
+  className = "",
 }: CtaButtonProps) {
+  const content = label ?? children;
+
   return (
     <Link
       href={href}
@@ -34,7 +40,7 @@ export default function CtaButton({
         hover:text-white
       "
     >
-      {children}
+      {content}
 
       <span
         aria-hidden="true"

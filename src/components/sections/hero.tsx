@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SectionButton from "../shared/section-button";
 
-const HERO_IMAGE = "/hero.jpg";
+const HERO_IMAGE = "/hero2.png";
 
 export default function Hero() {
   return (

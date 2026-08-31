@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Logo from "./logo";
 import { FooterColumn, FooterLink } from "../shared/footer-components";
+import CtaButton from "../shared/cta-button";
 
 const navigation = [
   { label: "Home", href: "/" },
@@ -29,12 +30,10 @@ export function Footer() {
                 Thoughtfully selected properties for refined living, meaningful
                 investment, and a place you can truly call home.
               </p>
-              <Link
+              <CtaButton
+                label="Explore Properties"
                 href="/properties"
-                className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[#0F6B65] px-5 py-3 text-[11px] font-medium uppercase tracking-[1.5px] text-[#0F6B65] transition-all duration-300 hover:bg-[#0F6B65] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0F6B65]"
-              >
-                Explore Properties
-              </Link>
+              />
             </div>
 
             <FooterColumn title="Explore">
