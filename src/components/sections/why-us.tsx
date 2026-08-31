@@ -1,8 +1,6 @@
 "use client";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
-
 import AboutHeading from "@/components/shared/section-heading";
 import WhyUsCard from "@/components/shared/why-us-card";
 import { useWhyUs } from "@/hooks/use-why-us";

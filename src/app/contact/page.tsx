@@ -1,7 +1,7 @@
 import Contact from "@/components/sections/contact";
 import CallToAction from "@/components/sections/cta";
 import ContactPageHero from "@/components/sections/contact-page-hero";
-
+import ContactMap from "@/components/sections/contact-map";
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#FCFBF8] text-[#1E1E1E]">
@@ -23,6 +23,7 @@ export default function ContactPage() {
           description="Whether you are buying, investing, or simply exploring the market, our team is ready to guide you with clarity and care."
         />
       </section>
+      <ContactMap />
 
       <CallToAction />
     </div>

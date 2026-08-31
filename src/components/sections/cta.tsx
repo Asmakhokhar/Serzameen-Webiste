@@ -98,9 +98,7 @@ export default function Cta() {
                 "
               >
                 Find a place that feels
-                <span className="italic text-[#0F6B65]">
-                  {" "}right.
-                </span>
+                <span className="italic text-[#0F6B65]"> right.</span>
               </h2>
 
               <p
@@ -113,15 +111,13 @@ export default function Cta() {
                   md:text-[14px]
                 "
               >
-                Explore thoughtfully selected properties and let us help
-                you find your next home or investment.
+                Explore thoughtfully selected properties and let us help you
+                find your next home or investment.
               </p>
             </div>
 
             {/* Action */}
-            <CtaButton href="/properties">
-              Explore Properties
-            </CtaButton>
+            <CtaButton href="/properties">Explore Properties</CtaButton>
           </div>
         </div>
       </div>

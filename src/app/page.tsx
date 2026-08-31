@@ -6,6 +6,7 @@ import FeaturedProperties from "@/components/sections/featured-properties";
 import CallToAction from "@/components/sections/cta";
 import Contact from "@/components/sections/contact";
 import ContactMap from "@/components/sections/contact-map";
+import FAQs from "@/components/sections/faqs";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <About />
       <FeaturedProperties />
       <WhyUs />
+      <FAQs />
       <Contact />
       <ContactMap />
       <CallToAction />
