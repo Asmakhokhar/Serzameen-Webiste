@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 import SectionButton from "../shared/section-button";
 
 const HERO_IMAGE = "/hero2.png";
@@ -49,7 +52,12 @@ export default function Hero() {
       <div className="absolute inset-0 z-20 flex items-center justify-center px-6">
         <div className="mx-auto -mt-4 max-w-[900px] text-center md:-mt-8">
           {/* Eyebrow */}
-          <div className="mb-6 flex items-center justify-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mb-6 flex items-center justify-center gap-3"
+          >
             <span className="h-px w-8 bg-[#D7C08A]" />
 
             <span
@@ -65,10 +73,13 @@ export default function Hero() {
             </span>
 
             <span className="h-px w-8 bg-[#D7C08A]" />
-          </div>
+          </motion.div>
 
           {/* Heading */}
-          <h1
+          <motion.h1
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.15 }}
             className="
               font-[var(--font-manrope)]
               text-[48px]
@@ -86,10 +97,13 @@ export default function Hero() {
             
               worth calling home.
             
-          </h1>
+          </motion.h1>
 
           {/* Description */}
-          <p
+          <motion.p
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
             className="
               mx-auto
               mt-7
@@ -105,17 +119,22 @@ export default function Hero() {
           >
             Discover thoughtfully selected properties where refined
             design, exceptional locations, and lasting value come together.
-          </p>
+          </motion.p>
 
           {/* CTA */}
-          <div className="mt-9 flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.45 }}
+            className="mt-9 flex justify-center"
+          >
             <SectionButton
               href="/contact"
               className="text-white"
             >
               <span>Get Started</span>
             </SectionButton>
-          </div>
+          </motion.div>
         </div>
       </div>
 
